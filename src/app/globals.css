@@ -1,26 +1,84 @@
-@import "tailwindcss";
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-primary-900;
+  }
+
+  ::selection {
+    @apply bg-primary-900 text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-balance;
+  }
+
+  p {
+    @apply text-pretty;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-main {
+    @apply mx-auto w-full max-w-8xl px-5 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24 xl:py-28;
+  }
+
+  .section-padding-lg {
+    @apply py-20 sm:py-24 lg:py-30 xl:py-34;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-primary-900 px-6 py-3 text-body-sm font-medium text-white transition-all duration-200 hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-primary-900 bg-transparent px-6 py-3 text-body-sm font-medium text-primary-900 transition-all duration-200 hover:bg-primary-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent px-4 py-2 text-body-sm font-medium text-primary-900 transition-all duration-200 hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-900 focus-visible:ring-offset-2;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-white/20 bg-white px-6 py-3 text-body-sm font-medium text-primary-900 transition-all duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-900 active:scale-[0.98];
+  }
+
+  .btn-white-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-white/30 bg-transparent px-6 py-3 text-body-sm font-medium text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-900 active:scale-[0.98];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
 }

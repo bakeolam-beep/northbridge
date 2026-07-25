@@ -1,0 +1,183 @@
+export const SITE_CONFIG = {
+    name: "Northbridge",
+    tagline: "Strategic Management Consulting",
+    description:
+        "We partner with ambitious businesses to engineer strategy, streamline operations, and ignite sustainable growth.",
+    url: "https://northbridge.com",
+} as const;
+
+export const NAV_LINKS = [
+    { label: "About Us", href: "#about" },
+    { label: "Our Services", href: "#services" },
+    { label: "Insights", href: "#insights" },
+    { label: "Careers", href: "#careers" },
+] as const;
+
+export const TRUST_STATS = [
+    {
+        value: "15+",
+        sublabel: "Years of",
+        label: "Strategic Excellence",
+    },
+    {
+        value: "$10B+",
+        label: "Assets Managed",
+    },
+    {
+        value: "500+",
+        label: "Clients Served",
+    },
+    {
+        value: "98%",
+        label: "Client Retention",
+    },
+] as const;
+
+export const WHY_CHOOSE_ITEMS = [
+    {
+        icon: "BarChart3" as const,
+        title: "Data Driven Insights",
+        description:
+            "Our analytical frameworks transform complex data landscapes into clear, actionable strategies that drive measurable results.",
+    },
+    {
+        icon: "Search" as const,
+        title: "Deep Sector Expertise",
+        description:
+            "We bring deep knowledge across industry verticals, enabling us to understand your competitive landscape and tailor solutions accordingly.",
+    },
+    {
+        icon: "Users" as const,
+        title: "Collaborative Partnership",
+        description:
+            "We believe collaboration isn't just methodology—it's how we embed our best practices to build long-term capabilities with your team.",
+    },
+] as const;
+
+export const SERVICES = [
+    {
+        icon: "TrendingUp" as const,
+        title: "Business Strategy",
+        description:
+            "Designing clear strategies that navigate complex markets, realign business models, and create competitive clarity for sustainable growth.",
+    },
+    {
+        icon: "Settings" as const,
+        title: "Operations Improvement",
+        description:
+            "Enhancing efficiency across your operational processes, eliminating inefficiencies and creating sustainable performance lift across operations.",
+    },
+    {
+        icon: "ArrowUpRight" as const,
+        title: "Growth Advisory",
+        description:
+            "We help organizations identify and execute strategic growth initiatives, from geographic expansion to new market entry and capability building.",
+    },
+    {
+        icon: "UserCheck" as const,
+        title: "Executive Coaching",
+        description:
+            "Preparing leadership teams with the mindset, frameworks and skills to lead dynamic, successful transformational change.",
+    },
+] as const;
+
+export const PROCESS_STEPS = [
+    {
+        number: "01",
+        title: "DISCOVER",
+        description:
+            "Comprehensive analysis to map your organizational needs, strategic challenges, and opportunities.",
+    },
+    {
+        number: "02",
+        title: "IDEATE",
+        description:
+            "Develop a precise, well-defined plan tailored to your needs, leveraging our deep industry expertise and frameworks.",
+    },
+    {
+        number: "03",
+        title: "RECOMMEND",
+        description:
+            "Developing a plan, we validate, iterate and build upon suggestions for measurable impact.",
+    },
+    {
+        number: "04",
+        title: "SUPPORT",
+        description:
+            "Trusted long-term advisors providing ongoing support for lasting impact and growth strategies with measurable results.",
+    },
+] as const;
+
+export const CASE_STUDY = {
+    title: "Optimizing Global Supply Chain for a Fortune 500 Retailer",
+    stats: [
+        { value: "22%", label: "Operational cost reduction" },
+        { value: "15x", label: "ROI achieved" },
+        { value: "€40M", label: "Annual savings" },
+    ],
+    challenge:
+        "A major global retail chain faced supply chain challenges across 15 globally sourcing partners spanning across 12 international markets, resulting in overstock situations in certain markets.",
+    solution:
+        "Through process data analysis and process re-engineering, we identified critical bottlenecks within the client's SKU inventory and logistics chain, and IT infrastructure to reduce delivery time by 40%.",
+} as const;
+
+export const TESTIMONIALS = [
+    {
+        quote:
+            "Northbridge didn't just deliver a report, they helped us reimagine our entire supply chain. The improvements to our competitive effectiveness have been remarkable.",
+        author: "Sarah Hawkins",
+        title: "VP Strategy, Global Retail Corp",
+    },
+    {
+        quote:
+            "Their strategic foresight and rigorous analytical approach helped us navigate a complex acquisition that positioned us as the market leader. Their understanding of cross-border dynamics was invaluable.",
+        author: "Maria Alvarez",
+        title: "CEO, FinTech Solutions",
+    },
+] as const;
+
+export const FAQ_ITEMS = [
+    {
+        question: "What industries do you primarily serve?",
+        answer:
+            "We serve clients across diverse sectors including financial services, retail, healthcare, technology, manufacturing, and professional services. Our teams bring deep domain expertise to each engagement.",
+    },
+    {
+        question: "How long is a typical engagement?",
+        answer:
+            "Engagement timelines vary based on scope and complexity. Typically, initial strategy projects run 8-12 weeks, while transformation programs may span 6-18 months. We always provide clear timelines and milestones upfront.",
+    },
+    {
+        question: "Do you assist with implementation?",
+        answer:
+            "Absolutely. We believe strategy is only valuable when executed well. We offer comprehensive implementation support, from project management to change management, ensuring our recommendations deliver measurable results.",
+    },
+    {
+        question: "How is your billing structured?",
+        answer:
+            "We offer flexible engagement models including project-based fees, retainer arrangements, and performance-linked structures. We work with you to find the model that best aligns with your needs and expected outcomes.",
+    },
+] as const;
+
+export const FOOTER_LINKS = {
+    company: [
+        { label: "About Us", href: "#" },
+        { label: "Careers", href: "#" },
+        { label: "Contact", href: "#" },
+    ],
+    services: [
+        { label: "Strategy", href: "#" },
+        { label: "Operations", href: "#" },
+        { label: "Growth", href: "#" },
+        { label: "Coaching", href: "#" },
+    ],
+    legal: [
+        { label: "Privacy", href: "#" },
+        { label: "Terms", href: "#" },
+        { label: "Cookies", href: "#" },
+    ],
+    social: [
+        { label: "LinkedIn", href: "#" },
+        { label: "Twitter", href: "#" },
+    ],
+} as const;
