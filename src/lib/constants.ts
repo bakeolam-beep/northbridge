@@ -99,44 +99,42 @@ export const CASE_STUDY = {
 export const PROCESS_STEPS = [
     {
         number: "01",
-        title: "DISCOVER",
+        title: "Discover",
         description:
-            "Comprehensive analysis to map your organizational needs, strategic challenges, and opportunities.",
+            "Comprehensive immersion into your organizational context, challenges, and objectives.",
     },
     {
         number: "02",
-        title: "IDEATE",
+        title: "Analyze",
         description:
-            "Develop a precise, well-defined plan tailored to your needs, leveraging our deep industry expertise and frameworks.",
+            "Rigorous quantitative and qualitative assessment to isolate core inefficiencies and opportunities.",
     },
     {
         number: "03",
-        title: "RECOMMEND",
+        title: "Recommend",
         description:
-            "Developing a plan, we validate, iterate and build upon suggestions for measurable impact.",
+            "Developing precise, actionable blueprints engineered for measurable impact.",
     },
     {
         number: "04",
-        title: "SUPPORT",
+        title: "Support",
         description:
-            "Trusted long-term advisors providing ongoing support for lasting impact and growth strategies with measurable results.",
+            "Guided execution and capability building to ensure strategies yield enduring results.",
     },
 ] as const;
-
-
 
 export const TESTIMONIALS = [
     {
         quote:
-            "Northbridge didn't just deliver a report, they helped us reimagine our entire supply chain. The improvements to our competitive effectiveness have been remarkable.",
-        author: "Sarah Hawkins",
-        title: "VP Strategy, Global Retail Corp",
+            "Northbridge didn't just hand us a report; they helped us fundamentally restructure our operations. The clarity they brought to our complex supply issues was transformative.",
+        author: "Sarah Jenkins",
+        title: "Chief Operating Officer, Global Retail Inc.",
     },
     {
         quote:
-            "Their strategic foresight and rigorous analytical approach helped us navigate a complex acquisition that positioned us as the market leader. Their understanding of cross-border dynamics was invaluable.",
-        author: "Maria Alvarez",
-        title: "CEO, FinTech Solutions",
+            "Their strategic foresight and rigorous analytical approach helped us navigate a critical market transition. They are indispensable advisors for our executive board.",
+        author: "Marcus Thorne",
+        title: "CEO, Technoward Solutions",
     },
 ] as const;
 
@@ -144,44 +142,58 @@ export const FAQ_ITEMS = [
     {
         question: "What industries do you primarily serve?",
         answer:
-            "We serve clients across diverse sectors including financial services, retail, healthcare, technology, manufacturing, and professional services. Our teams bring deep domain expertise to each engagement.",
+            "We maintain deep expertise across finance, enterprise technology, manufacturing, and global retail. However, our strategic frameworks are adaptable to any sector facing complex operational or growth challenges.",
     },
     {
         question: "How long is a typical engagement?",
         answer:
-            "Engagement timelines vary based on scope and complexity. Typically, initial strategy projects run 8-12 weeks, while transformation programs may span 6-18 months. We always provide clear timelines and milestones upfront.",
+            "Engagements vary based on scope. Targeted strategic assessments typically last 6–8 weeks, while comprehensive operational transformations often span 6–12 months to ensure successful implementation.",
     },
     {
         question: "Do you assist with implementation?",
         answer:
-            "Absolutely. We believe strategy is only valuable when executed well. We offer comprehensive implementation support, from project management to change management, ensuring our recommendations deliver measurable results.",
+            "Yes. We believe a strategy is only as valuable as its execution. We offer guided support phases to help your internal teams implement our recommendations effectively.",
     },
     {
         question: "How is your billing structured?",
         answer:
-            "We offer flexible engagement models including project-based fees, retainer arrangements, and performance-linked structures. We work with you to find the model that best aligns with your needs and expected outcomes.",
+            "We offer customized engagement models, typically structuring fees based on project milestones or retained advisory services, tailored to align with your specific objectives.",
     },
 ] as const;
 
 export const FOOTER_LINKS = {
-    company: [
-        { label: "About Us", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Contact", href: "#" },
-    ],
-    services: [
-        { label: "Strategy", href: "#" },
-        { label: "Operations", href: "#" },
-        { label: "Growth", href: "#" },
-        { label: "Coaching", href: "#" },
-    ],
-    legal: [
-        { label: "Privacy", href: "#" },
-        { label: "Terms", href: "#" },
-        { label: "Cookies", href: "#" },
-    ],
-    social: [
-        { label: "LinkedIn", href: "#" },
-        { label: "Twitter", href: "#" },
-    ],
+    expertise: {
+        title: "Expertise",
+        links: [
+            { label: "Business Strategy", href: "#services" },
+            { label: "Operations", href: "#services" },
+            { label: "Growth Advisory", href: "#services" },
+            { label: "Executive Coaching", href: "#services" },
+        ],
+    },
+    firm: {
+        title: "Firm",
+        links: [
+            { label: "Case Studies", href: "#case-study" },
+            { label: "Our Process", href: "#process" },
+            { label: "Leadership", href: "#" },
+            { label: "Careers", href: "#" },
+        ],
+    },
+    legal: {
+        title: "Legal",
+        links: [
+            { label: "Privacy Policy", href: "#" },
+            { label: "Terms of Service", href: "#" },
+            { label: "Cookie Policy", href: "#" },
+        ],
+    },
+} as const;
+
+export const CTA_CONTENT = {
+    overline: "Initiate Transformation",
+    title: "Ready to scale with",
+    titleAccent: "precision",
+    description:
+        "Our senior advisors are ready to architect a custom strategy for your organization's unique challenges.",
 } as const;
