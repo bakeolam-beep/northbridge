@@ -3,7 +3,9 @@ export const SITE_CONFIG = {
     tagline: "Strategic Management Consulting",
     description:
         "We partner with ambitious businesses to engineer strategy, streamline operations, and ignite sustainable growth.",
-    url: "https://northbridge.com",
+    url:
+        process.env.NEXT_PUBLIC_SITE_URL ??
+        "https://northbridge.example.com",
 } as const;
 
 export const NAV_LINKS = [
