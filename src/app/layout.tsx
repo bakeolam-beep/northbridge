@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,8 +8,15 @@ const inter = Inter({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["opsz"],
+});
+
 export const metadata: Metadata = {
-  title: "Northbridge | Strategic Management Consulting",
+  title: "Northbridge | Architecting Competitive Advantage",
   description:
     "We partner with ambitious businesses to engineer strategy, streamline operations, and ignite sustainable growth.",
   keywords: [
@@ -20,7 +27,7 @@ export const metadata: Metadata = {
     "executive coaching",
   ],
   openGraph: {
-    title: "Northbridge | Strategic Management Consulting",
+    title: "Northbridge | Architecting Competitive Advantage",
     description:
       "We partner with ambitious businesses to engineer strategy, streamline operations, and ignite sustainable growth.",
     type: "website",
@@ -28,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Northbridge | Strategic Management Consulting",
+    title: "Northbridge | Architecting Competitive Advantage",
     description:
       "We partner with ambitious businesses to engineer strategy, streamline operations, and ignite sustainable growth.",
   },
@@ -44,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

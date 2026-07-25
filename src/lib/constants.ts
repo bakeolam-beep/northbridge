@@ -7,25 +7,20 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-    { label: "About Us", href: "#about" },
-    { label: "Our Services", href: "#services" },
-    { label: "Insights", href: "#insights" },
-    { label: "Careers", href: "#careers" },
+    { label: "Strategy", href: "#services" },
+    { label: "Operations", href: "#services" },
+    { label: "Growth", href: "#services" },
+    { label: "Coaching", href: "#services" },
 ] as const;
 
 export const TRUST_STATS = [
-    {
-        value: "15+",
-        sublabel: "Years of",
-        label: "Strategic Excellence",
-    },
     {
         value: "$10B+",
         label: "Assets Managed",
     },
     {
         value: "500+",
-        label: "Clients Served",
+        label: "Projects Delivered",
     },
     {
         value: "98%",
@@ -35,22 +30,22 @@ export const TRUST_STATS = [
 
 export const WHY_CHOOSE_ITEMS = [
     {
-        icon: "BarChart3" as const,
-        title: "Data Driven Insights",
+        icon: "LineChart" as const,
+        title: "Data-Driven Insights",
         description:
-            "Our analytical frameworks transform complex data landscapes into clear, actionable strategies that drive measurable results.",
+            "We ground every strategy in rigorous quantitative analysis, ensuring our recommendations are built on verifiable reality, not intuition.",
     },
     {
-        icon: "Search" as const,
+        icon: "Compass" as const,
         title: "Deep Sector Expertise",
         description:
-            "We bring deep knowledge across industry verticals, enabling us to understand your competitive landscape and tailor solutions accordingly.",
+            "Our senior partners bring decades of frontline experience across finance, technology, and global supply chains.",
     },
     {
-        icon: "Users" as const,
+        icon: "Handshake" as const,
         title: "Collaborative Partnership",
         description:
-            "We believe collaboration isn't just methodology—it's how we embed our best practices to build long-term capabilities with your team.",
+            "We work alongside your leadership team, integrating seamlessly to build internal capabilities and ensure long-term sustainability.",
     },
 ] as const;
 
