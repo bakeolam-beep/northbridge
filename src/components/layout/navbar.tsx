@@ -9,31 +9,35 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 8);
+        const handleScroll = () => {
+            // Consider "scrolled" once we're past ~85% of viewport height (past the hero)
+            const threshold = window.innerHeight * 0.85;
+            setScrolled(window.scrollY > threshold);
+        };
         handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
+        document.body.style.overflow = isOpen ? "hidden" : "";
         return () => {
             document.body.style.overflow = "";
         };
     }, [isOpen]);
 
+    const isLight = !scrolled;
+
     return (
         <header
             className={cn(
-                "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-                isScrolled ? "bg-ink/90 backdrop-blur-md" : "bg-transparent"
+                "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow] duration-500 ease-out",
+                scrolled
+                    ? "border-b border-neutral-200 bg-white/90 backdrop-blur-md"
+                    : "border-b border-transparent bg-transparent"
             )}
         >
             <div className="container-main">
@@ -42,12 +46,20 @@ export function Navbar() {
                     aria-label="Primary"
                 >
                     <div className="flex items-center gap-12">
-                        <Logo variant="light" />
+                        <Logo variant={isLight ? "light" : "dark"} />
 
                         <ul className="hidden items-center gap-8 lg:flex">
                             {NAV_LINKS.map((link) => (
                                 <li key={link.label}>
-                                    <Link href={link.href} className="nav-link">
+                                    <Link
+                                        href={link.href}
+                                        className={cn(
+                                            "text-nav font-medium uppercase transition-colors duration-200",
+                                            isLight
+                                                ? "text-white/70 hover:text-white"
+                                                : "text-ink/60 hover:text-ink"
+                                        )}
+                                    >
                                         {link.label}
                                     </Link>
                                 </li>
@@ -58,7 +70,12 @@ export function Navbar() {
                     <div className="hidden lg:flex">
                         <Link
                             href="#contact"
-                            className="inline-flex items-center justify-center rounded-sm bg-white px-5 py-2.5 text-nav font-medium uppercase text-ink transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+                            className={cn(
+                                "inline-flex items-center justify-center rounded-sm px-5 py-2.5 text-nav font-medium uppercase transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
+                                isLight
+                                    ? "bg-white text-ink hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-ink"
+                                    : "bg-ink text-white hover:bg-primary-800 focus-visible:ring-ink focus-visible:ring-offset-white"
+                            )}
                         >
                             Book a Consultation
                         </Link>
@@ -67,7 +84,12 @@ export function Navbar() {
                     <button
                         type="button"
                         onClick={() => setIsOpen((v) => !v)}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white lg:hidden"
+                        className={cn(
+                            "inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 lg:hidden",
+                            isLight
+                                ? "text-white hover:bg-white/10 focus-visible:ring-white"
+                                : "text-ink hover:bg-ink/5 focus-visible:ring-ink"
+                        )}
                         aria-label={isOpen ? "Close menu" : "Open menu"}
                         aria-expanded={isOpen}
                         aria-controls="mobile-menu"
@@ -85,7 +107,7 @@ export function Navbar() {
             <div
                 id="mobile-menu"
                 className={cn(
-                    "fixed inset-x-0 top-16 bottom-0 z-40 bg-ink transition-transform duration-300 ease-out-expo lg:hidden",
+                    "fixed inset-x-0 top-16 bottom-0 z-40 bg-ink transition-transform duration-500 ease-out lg:hidden",
                     isOpen ? "translate-x-0" : "translate-x-full"
                 )}
                 aria-hidden={!isOpen}

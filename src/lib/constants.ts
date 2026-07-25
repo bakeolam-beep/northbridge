@@ -54,27 +54,47 @@ export const SERVICES = [
         icon: "TrendingUp" as const,
         title: "Business Strategy",
         description:
-            "Designing clear strategies that navigate complex markets, realign business models, and create competitive clarity for sustainable growth.",
+            "Aligning vision with execution to navigate complex market dynamics and secure undeniable market leadership.",
     },
     {
-        icon: "Settings" as const,
+        icon: "Settings2" as const,
         title: "Operations Improvement",
         description:
-            "Enhancing efficiency across your operational processes, eliminating inefficiencies and creating sustainable performance lift across operations.",
+            "Streamlining workflows and radically optimizing resource allocation for maximum efficiency and reduced overhead.",
     },
     {
-        icon: "ArrowUpRight" as const,
+        icon: "Sprout" as const,
         title: "Growth Advisory",
         description:
-            "We help organizations identify and execute strategic growth initiatives, from geographic expansion to new market entry and capability building.",
+            "Identifying new revenue streams, bold market entry strategies, and scalable models for sustainable expansion.",
     },
     {
-        icon: "UserCheck" as const,
+        icon: "Users" as const,
         title: "Executive Coaching",
         description:
-            "Preparing leadership teams with the mindset, frameworks and skills to lead dynamic, successful transformational change.",
+            "Empowering leadership teams with the crucial frameworks and insights needed to drive profound organizational change.",
     },
 ] as const;
+
+export const CASE_STUDY = {
+    overline: "Featured Case Study",
+    title: "Optimizing Global Supply Chain for a",
+    titleAccent: "Fortune 500 Retailer",
+    metrics: [
+        { value: "22%", label: "Margin Increase" },
+        { value: "15%", label: "Faster Delivery" },
+        { value: "€40M", label: "Annual Savings" },
+    ],
+    challenge: {
+        label: "The Challenge",
+        body: "Inefficiencies in global distribution were significantly eroding profit margins and delaying time-to-market for critical seasonal inventory.",
+    },
+    outcome: {
+        label: "The Outcome",
+        body: "Through rigorous data analysis and process re-engineering, we identified critical bottlenecks, resulting in a 22% reduction in logistical costs and a 15% increase in on-time delivery rates.",
+    },
+    imageAlt: "Minimalist workspace showcasing strategic planning materials",
+} as const;
 
 export const PROCESS_STEPS = [
     {
@@ -103,18 +123,7 @@ export const PROCESS_STEPS = [
     },
 ] as const;
 
-export const CASE_STUDY = {
-    title: "Optimizing Global Supply Chain for a Fortune 500 Retailer",
-    stats: [
-        { value: "22%", label: "Operational cost reduction" },
-        { value: "15x", label: "ROI achieved" },
-        { value: "€40M", label: "Annual savings" },
-    ],
-    challenge:
-        "A major global retail chain faced supply chain challenges across 15 globally sourcing partners spanning across 12 international markets, resulting in overstock situations in certain markets.",
-    solution:
-        "Through process data analysis and process re-engineering, we identified critical bottlenecks within the client's SKU inventory and logistics chain, and IT infrastructure to reduce delivery time by 40%.",
-} as const;
+
 
 export const TESTIMONIALS = [
     {

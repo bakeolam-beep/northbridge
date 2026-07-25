@@ -1,12 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { TRUST_STATS } from "@/lib/constants";
+import { MotionWrapper } from "@/components/ui/motion-wrapper";
 
-// Minimal geometric "partner" marks — abstract logos matching the editorial aesthetic
 function PartnerMark({ variant }: { variant: 1 | 2 | 3 }) {
-    const base =
-        "flex h-8 w-8 items-center justify-center text-ink/70";
+    const base = "flex h-7 w-7 items-center justify-center text-ink/60";
 
     if (variant === 1) {
         return (
@@ -15,13 +11,13 @@ function PartnerMark({ variant }: { variant: 1 | 2 | 3 }) {
                     <path
                         d="M6 24 L16 6 L26 24 Z"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="1.4"
                         strokeLinejoin="round"
                     />
                     <path
                         d="M11 24 L16 15 L21 24"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="1.4"
                         strokeLinejoin="round"
                     />
                 </svg>
@@ -33,8 +29,8 @@ function PartnerMark({ variant }: { variant: 1 | 2 | 3 }) {
         return (
             <div className={base} aria-hidden="true">
                 <svg viewBox="0 0 32 32" fill="none" className="h-full w-full">
-                    <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.4" />
+                    <circle cx="16" cy="16" r="4" stroke="currentColor" strokeWidth="1.4" />
                 </svg>
             </div>
         );
@@ -49,12 +45,12 @@ function PartnerMark({ variant }: { variant: 1 | 2 | 3 }) {
                     width="20"
                     height="20"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth="1.4"
                 />
                 <path
                     d="M6 6 L26 26 M26 6 L6 26"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth="1.4"
                 />
             </svg>
         </div>
@@ -62,22 +58,15 @@ function PartnerMark({ variant }: { variant: 1 | 2 | 3 }) {
 }
 
 export function TrustStrip() {
-    const ease = [0.19, 1, 0.22, 1] as const;
-
     return (
         <section
-            className="border-y border-neutral-200 bg-mist"
+            className="border-b border-neutral-200 bg-mist"
             aria-labelledby="trust-heading"
         >
             <div className="container-main">
-                <div className="grid grid-cols-1 gap-10 py-12 sm:py-14 lg:grid-cols-2 lg:gap-16 lg:py-16">
+                <div className="grid grid-cols-1 items-center gap-12 py-14 lg:grid-cols-12 lg:gap-16 lg:py-16">
                     {/* Left: partners */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.7, ease }}
-                    >
+                    <MotionWrapper className="lg:col-span-5">
                         <p className="text-overline font-medium uppercase text-neutral-500">
                             Trusted Global Partners
                         </p>
@@ -85,47 +74,50 @@ export function TrustStrip() {
                             id="trust-heading"
                             className="mt-3 font-serif text-headline-sm text-ink sm:text-headline"
                         >
-                            15+ Years of
-                            <br />
-                            <span className="font-medium">Strategic Excellence</span>
+                            <span className="block font-normal text-neutral-500">
+                                15+ Years of
+                            </span>
+                            <span className="block font-medium">Strategic Excellence</span>
                         </h2>
 
-                        <div className="mt-6 flex items-center gap-6" aria-label="Partner organizations">
+                        <div
+                            className="mt-6 flex items-center gap-5"
+                            aria-label="Partner organizations"
+                        >
                             <PartnerMark variant={1} />
                             <PartnerMark variant={2} />
                             <PartnerMark variant={3} />
                         </div>
-                    </motion.div>
+                    </MotionWrapper>
 
                     {/* Right: stats */}
-                    <motion.dl
-                        initial={{ opacity: 0, y: 12 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.7, delay: 0.1, ease }}
-                        className="grid grid-cols-3 items-center gap-4 self-center sm:gap-8 lg:justify-self-end"
+                    <MotionWrapper
+                        delay={0.1}
+                        className="lg:col-span-7 lg:justify-self-end"
                     >
-                        {TRUST_STATS.map((stat, i) => (
-                            <div
-                                key={stat.label}
-                                className={
-                                    i > 0
-                                        ? "border-l border-neutral-300 pl-4 sm:pl-8"
-                                        : ""
-                                }
-                            >
-                                <dt className="sr-only">{stat.label}</dt>
-                                <dd>
-                                    <p className="font-serif text-headline text-ink sm:text-headline-lg">
-                                        {stat.value}
-                                    </p>
-                                    <p className="mt-2 text-overline font-medium uppercase text-neutral-500">
-                                        {stat.label}
-                                    </p>
-                                </dd>
-                            </div>
-                        ))}
-                    </motion.dl>
+                        <dl className="flex items-start gap-8 sm:gap-14 lg:gap-16">
+                            {TRUST_STATS.map((stat, i) => (
+                                <div
+                                    key={stat.label}
+                                    className={
+                                        i > 0
+                                            ? "border-l border-neutral-300 pl-8 sm:pl-14 lg:pl-16"
+                                            : ""
+                                    }
+                                >
+                                    <dt className="sr-only">{stat.label}</dt>
+                                    <dd>
+                                        <p className="font-serif text-headline text-ink sm:text-headline-lg lg:text-[2.5rem] lg:leading-none">
+                                            {stat.value}
+                                        </p>
+                                        <p className="mt-3 whitespace-nowrap text-overline font-medium uppercase text-neutral-500">
+                                            {stat.label}
+                                        </p>
+                                    </dd>
+                                </div>
+                            ))}
+                        </dl>
+                    </MotionWrapper>
                 </div>
             </div>
         </section>
