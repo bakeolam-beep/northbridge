@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface LogoProps {
     variant?: "light" | "dark";
@@ -17,7 +18,7 @@ export function Logo({ variant = "light", className, href = "/" }: LogoProps) {
                 "group inline-flex items-center gap-2.5 focus-visible:outline-none",
                 className
             )}
-            aria-label="Northbridge home"
+            aria-label={`${SITE_CONFIG.name} home`}
         >
             <span
                 className={cn(
@@ -39,7 +40,7 @@ export function Logo({ variant = "light", className, href = "/" }: LogoProps) {
                     isLight ? "text-white" : "text-ink"
                 )}
             >
-                Northbridge
+                {SITE_CONFIG.name}
             </span>
         </Link>
     );
