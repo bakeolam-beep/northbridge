@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
   authors: [{ name: SITE_CONFIG.name }],
-  generator: "Next.js",
+  generator: "BakeBeep",
   keywords: [
     "management consulting",
     "business strategy",
